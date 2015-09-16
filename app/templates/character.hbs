@@ -1,0 +1,59 @@
+<h4>Name: {{ character.name }}</h4>
+
+<h4>Class: {{ character.className }}</h4>
+
+
+
+<h4>Max Health: {{ character.maxHealth }}</h4>
+<h4>Max MANA: {{ character.maxMana }}</h4>
+
+
+
+<div>
+  strength:
+</div>
+<div>
+  <a {{action 'decreaseStat' 'strength'}}>--</a>
+  <span>{{ character.strength }}</span>
+  <a {{action 'increaseStat' 'strength'}}>++</a>
+</div>
+
+<div>
+  wisdom:
+</div>
+<div>
+  <a {{action 'decreaseStat' 'wisdom'}}>--</a>
+  <span>{{ character.wisdom }}</span>
+  <a {{action 'increaseStat' 'wisdom'}}>++</a>
+</div>
+
+<div>
+  dexterity:
+</div>
+<div>
+  <a {{action 'decreaseStat' 'dexterity'}}>--</a>
+  <span>{{ character.dexterity }}</span>
+  <a {{action 'increaseStat' 'dexterity'}}>++</a>
+</div>
+
+
+
+<div>
+  Constitution:
+</div>
+<div>
+  <a {{action 'decreaseStat' 'constitution'}}>--</a>
+  <span>{{ character.constitution }}</span>
+  <a {{action 'increaseStat' 'constitution'}}>++</a>
+</div>
+
+<div>
+  charisma:
+</div>
+<div>
+  <a {{action 'decreaseStat' 'charisma'}}>--</a>
+  <span>{{ character.charisma }}</span>
+  <a {{action 'increaseStat' 'charisma'}}>++</a>
+</div>
+
+<button {{action 'increaseStat' 'level' }}>Level Up!</button>
