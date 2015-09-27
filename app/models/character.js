@@ -3,8 +3,8 @@ import Item from './item';
 const BASE_HP = 40;
 const BASE_MANA = 30;
 
-export default Ember.Object.extend({
-  level: 1,
+export default DS.Model.extend({
+  level: DS.attr('number',{defaultValue: 1}),
   strength: 10,
   int: 17,
   wisdom: 10,
