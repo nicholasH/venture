@@ -1,8 +1,8 @@
 import Ember from 'ember';
-import Item from '../models/item'
+import Item from '../models/item';
 
 export default Ember.Controller.extend({
-  character: Ember.computed.alias('model'),
+  character: Ember.computed.alias('character', 'characters.firstObject'),
   hasItems: Ember.computed.notEmpty('character.items'),
 
   _modifyStat: function(stat, amount){
@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
     removeItem: function(item){
       this.get('character.items').removeObject(item);
     },
-    
+
     addItem: function() {
       this.get('character.items').pushObject(Item.createRandom());
     },
