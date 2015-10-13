@@ -19,59 +19,15 @@
 
     <table class="table table-striped">
       <tbody>
-        <tr>
-          <tb><em><strong>strength</strong></em>:</tb>
-        </tr>
-        <tr>
-          <tb><button class="btn btn-warning" {{action 'decreaseStat' 'strength'}}>--</button></tb>
-          <tb>{{ character.strength }}</tb>
-          <tb><button class="btn btn-success"{{action 'increaseStat' 'strength'}}>++</button></tb>
-        </tr>
 
-        <tr>
-        <tb><em><strong>wisdom</strong></em>:</tb>
-        </tr>
-        <tr>
-          <tb><button class="btn btn-warning" {{action 'decreaseStat' 'wisdom'}}>--</button></tb>
-          <tb>{{ character.wisdom }}</tb>
-          <tb><button class="btn btn-success"{{action 'increaseStat' 'wisdom'}}>++</button></tb>
-        </tr>
 
-        <tr>
-        <tb><em><strong>dexterity</strong></em>:</tb>
-        </tr>
-        <tr>
-          <tb><button class="btn btn-warning" {{action 'decreaseStat' 'dexterity'}}>--</button></tb>
-          <tb>{{ character.dexterity }}</tb>
-          <tb><button class="btn btn-success"{{action 'increaseStat' 'dexterity'}}>++</button></tb>
-        </tr>
+        {{character-stat-mod label='strength' stat=character.strength }}
+        {{character-stat-mod label='wisdom' stat=character.wisdom }}
+        {{character-stat-mod label='dexterity' stat=character.dexterity }}
+        {{character-stat-mod label='constitution' stat=character.constitution }}
+        {{character-stat-mod label='charisma' stat=character.charisma }}
+        {{character-stat-mod label='intelligences' stat=character.int }}
 
-        <tr>
-        <tb><em><strong>constitution</strong></em>:</tb>
-        </tr>
-        <tr>
-          <tb><button class="btn btn-warning" {{action 'decreaseStat' 'Constitution'}}>--</button></tb>
-          <tb>{{ character.constitution }}</tb>
-          <tb><button class="btn btn-success"{{action 'increaseStat' 'Constitution'}}>++</button></tb>
-        </tr>
-
-        <tr>
-        <tb><em><strong>charisma</strong></em>:</tb>
-        </tr>
-        <tr>
-          <tb><button class="btn btn-warning" {{action 'decreaseStat' 'charisma'}}>--</button></tb>
-          <tb>{{ character.charisma }}</tb>
-          <tb><button class="btn btn-success"{{action 'increaseStat' 'charisma'}}>++</button></tb>
-        </tr>
-
-        <tr>
-        <tb><em><strong>intelligences</strong></em>:</tb>
-        </tr>
-        <tr>
-          <tb><button class="btn btn-warning" {{action 'decreaseStat' 'int'}}>--</button></tb>
-          <tb>{{ character.int }}</tb>
-          <tb><button class="btn btn-success"{{action 'increaseStat' 'int'}}>++</button></tb>
-        </tr>
 
 
       </tbody>

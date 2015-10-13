@@ -1,23 +1,9 @@
 import Ember from 'ember';
+import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(LoginControllerMixin,{
 
-
-
-
-  actions:{
-
-    summitLogin: function(identification,password){
-
-    }
-
-
-
-
-  }
-
-
-
+  authenticator: 'simple-auth-authenticator:devise',
 
 
 });
