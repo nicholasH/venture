@@ -9,6 +9,7 @@ Router.map(function() {
   
 
   this.route('login');
+  this.route('logout');
   this.route('authenticated' , function() {
     this.route('secretz');
     this.route('character');
