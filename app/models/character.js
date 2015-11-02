@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import DS from 'ember-data';
-import Item from './item';
 const BASE_HP = 40;
 const BASE_MANA = 30;
 
@@ -33,6 +32,7 @@ export default DS.Model.extend({
     return names[Math.floor(Math.random()*names.length)];
   }}),
 
+  items: DS.hasMany('items',{async: true}),
 
   itemWeights: Ember.computed.mapBy('items','weight'),
   itemWeight: Ember.computed.sum('itemWeights'),
@@ -43,8 +43,10 @@ export default DS.Model.extend({
      return this.get('strength') * 5;
   }),
 
-  items: Ember.computed( function(){
-    return [Item.createRandom()];
+  itemConstitutionBonuses: Ember.computed.mapBy('items','constitutionBonus'),
+  constitutionBonus: Ember.computed.sum('itemConstitutionBonuses'),
+  effectiveConstitution: Ember.computed('constitutionBonus','constitution', function() {
+    return this.get('constitution') + this.get('constitutionBonus');
   })
 
 
