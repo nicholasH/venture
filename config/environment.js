@@ -42,15 +42,16 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
-  
+
   ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:devise'
+    authorizer: 'simple-auth-authorizer:devise',
+    routeAfterAuthentication: "authenticated.character"
   }
   ENV['simple-auth-devise'] = {
     tokenAttributeName:'token',
     identificationAttributeName: 'email'
   };
-  
+
 
   return ENV;
 };

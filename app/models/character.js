@@ -12,6 +12,9 @@ export default DS.Model.extend({
   constitution: DS.attr('number',{defaultValue: 1}),
   charisma: DS.attr('number',{defaultValue: 1}),
 
+
+  statPointsToSpend: DS.attr('number',{defaultValue: 20}),
+
   maxHealth: Ember.computed('level', 'constitution', function() {
     return BASE_HP + (this.get('constitution') * this.get('level'));
   }),

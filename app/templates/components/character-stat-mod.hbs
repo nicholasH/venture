@@ -4,5 +4,5 @@
 <tr>
   <tb><button class="btn btn-warning" {{action 'decreaseStat'}}>--</button></tb>
   <tb>{{ stat }}</tb>
-  <tb><button class="btn btn-success"{{action 'increaseStat'}}>++</button></tb>
+  <tb><button class="btn btn-success"{{action 'increaseStat'}} disabled= {{unless hasPointsLeft 'disabled'}}>++</button></tb>
 </tr>
