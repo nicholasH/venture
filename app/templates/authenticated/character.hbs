@@ -1,0 +1,16 @@
+
+<div>
+      {{#each characters as |character|}}
+          <div>
+          {{#link-to 'play' character }}
+          <button class="btn">
+            {{ character.name }} {{character.level}}
+          </button>
+          {{/link-to}}
+          </div>
+
+
+      {{/each}}
+      {{#link-to 'authenticated.new-char' }} <li class="btn btn-default">New</li> {{/link-to}}
+
+</div>

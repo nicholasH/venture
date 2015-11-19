@@ -1,0 +1,41 @@
+
+
+<div id="myModal" class="modal fade in" style="display: block;" role="dialog">
+
+<div class="modal-dialog">
+<div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{model.pointsLeft}}</h4>
+      </div>
+      <div class="modal-body">
+        <div>Level up</div>
+
+<span class='btn btn-default' {{action 'closeModal'}}>close</span>
+    <table class="table table-striped">
+      <tbody>
+
+
+        {{character-stat-mod label='strength' stat=character.strength  pointsLeft= model.pointsLeft}}
+        {{character-stat-mod label='wisdom' stat=character.wisdom pointsLeft= model.pointsLeft}}
+        {{character-stat-mod label='dexterity' stat=character.dexterity pointsLeft= model.pointsLeft}}
+        {{character-stat-mod label='constitution' stat=character.constitution pointsLeft= model.pointsLeft}}
+        {{character-stat-mod label='charisma' stat=character.charisma pointsLeft= model.pointsLeft}}
+        {{character-stat-mod label='intelligences' stat=character.int pointsLeft= model.pointsLeft}}
+
+
+
+      </tbody>
+     </table>
+</div>
+</div>
+      </div>
+      <div class="modal-footer">
+      {{#if hasPointsLeft}}
+        <span class='btn btn-default' disabled="disabled">done</span>
+      {{else}}
+        <span class='btn btn-default' {{action 'save'}}>done</span>
+       {{/if}}
+
+      </div>
+    </div>

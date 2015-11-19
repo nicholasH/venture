@@ -1,0 +1,108 @@
+<div class ="row">
+  <div class="col-sm-3">
+    <form class="row"{{action "changeName" cname on="submit"}}>
+
+
+      <div class = {{if errors.character.name 'has-error'}}>
+      <span class="col-sm-3"><span class = lead>Name</span>:{{input value=character.name size=3 name="cname" class="form-control" }}</span>
+      </div>
+      <span class="col-sm-3"><span class = lead>Class</span>: {{ character.charaterClass }}</span>
+           <div class="row">
+       <button class="col-sm-3" type="submit"> save </button>
+     </div>
+     </form>
+      <div class="row">
+
+      <span class="col-sm-3"><span class = lead>Health</span>: {{ character.maxHealth }}</span>
+      <span class="col-sm-3"><span class = lead>MANA</span>: {{ character.maxMana }}</span>
+     </div>
+     <div class="row">
+
+      <span class="col-sm-3">
+
+        {{#each errors.character.name as |err|}}
+
+      <span>{{errors.character.name}}</span>{{/each}}
+      </span>
+     </div>
+
+
+
+
+  </div>
+
+
+  <div class="col-sm-3">
+
+    <table class="table table-striped">
+      <thead>
+      {{character.statPointsToSpend }}
+      </thead>
+      <tbody>
+
+
+        {{character-stat-mod label='strength' stat=character.strength pointsLeft=character.statPointsToSpend }}
+        {{character-stat-mod label='wisdom' stat=character.wisdom pointsLeft=character.statPointsToSpend}}
+        {{character-stat-mod label='dexterity' stat=character.dexterity pointsLeft=character.statPointsToSpend}}
+        {{character-stat-mod label='constitution' stat=character.constitution pointsLeft=character.statPointsToSpend}}
+        {{character-stat-mod label='charisma' stat=character.charisma pointsLeft=character.statPointsToSpend}}
+        {{character-stat-mod label='intelligences' stat=character.int pointsLeft=character.statPointsToSpend}}
+
+
+
+      </tbody>
+     </table>
+
+
+  </div>
+
+  <div class="col-sm-3">
+<div>
+  Items:
+</div>
+<div>
+  <button {{ action 'addItem' }}>add</button>
+  {{#if hasItems}}
+    <table class="table">
+      <thead>
+        <th>Name</th>
+        <th>Weight</th>
+        <th>&nbsp;</th>
+      </thead>
+
+      <tbody>
+
+      {{#each character.items as |item|}}
+        <tr>
+          <td>{{ item.name }}</td>
+          <td>{{ item.weight }}</td>
+          <td><button class="btn btn-danger"{{ action 'removeItem' item }}>remove</button></td>
+        </tr>
+
+      {{/each}}
+      </tbody>
+    </table>
+   {{else}}
+     <div> RUN AWAY!! no items...</div>
+   {{/if}}
+</div>
+
+  </div>
+</div>
+
+
+<button type = "button" class="btn btn-primary btn-lg btn-block" {{action 'levelUp' }}>Level Up!</button>
+<button type = "button" class="btn btn-primary btn-lg btn-block" {{action 'addCharacter'}}>new char</button>
+<button type = "button" class="btn btn-primary btn-lg btn-block" {{action 'deleteCharacter' character}}>delete</button>
+<button type = "button" class="btn btn-primary btn-lg btn-block" {{action 'randomizeCharacter'}}>random</button>
+
+      {{#each characters as |character|}}
+          <span>
+          <button class="btn" {{action 'changeCharacter' character}}>
+
+            {{ character.name }} {{character.level}}
+
+          </button>
+          </span>
+
+      {{/each}}

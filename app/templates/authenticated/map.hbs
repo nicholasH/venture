@@ -1,0 +1,57 @@
+<h4>You are in "{{ name }}"</h4>
+
+Width: {{input value=mapWidth size="3"}}
+Height: {{input value=mapHeight size="3"}}
+
+<div>
+  Character:
+</div>
+<div>
+  Summery:
+</div>
+
+
+<table style="border: 1px solid gray;">
+  {{#each map.rows as |row|}}
+    <tr>
+      {{#each row.cells as |cell|}}
+        <td>{{cell.text}}</td>
+      {{/each}}
+    </tr>
+  {{/each}}
+</table>
+<div>
+  <table>
+    <tr>
+      <td></td>
+      <td>
+        <button type="button" class="btn btn-default btn-lg" {{action 'movePlayer' 'up'}}>
+          up
+        </button>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <button type="button" class="btn btn-default btn-lg">
+          Left
+        </button>
+      </td>
+      <td></td>
+      <td>
+        <button type="button" class="btn btn-default btn-lg">
+          Right
+        </button>
+      </td>
+    </tr>
+     <tr>
+      <td></td>
+      <td>
+        <button type="button" class="btn btn-default btn-lg">
+          down
+        </button>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+</div>
