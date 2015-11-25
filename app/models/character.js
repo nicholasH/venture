@@ -12,6 +12,9 @@ export default DS.Model.extend({
   constitution: DS.attr('number',{defaultValue: 1}),
   charisma: DS.attr('number',{defaultValue: 1}),
 
+  x: DS.attr('number',{defaultValue: 0}),
+  y: DS.attr('number',{defaultValue: 0}),
+
 
   statPointsToSpend: DS.attr('number',{defaultValue: 20}),
 
@@ -50,7 +53,14 @@ export default DS.Model.extend({
   constitutionBonus: Ember.computed.sum('itemConstitutionBonuses'),
   effectiveConstitution: Ember.computed('constitutionBonus','constitution', function() {
     return this.get('constitution') + this.get('constitutionBonus');
-  })
+  }),
+
+
+  world_veiw: DS.belongsTo('world_view',{async: true}),
+
+
+
+
 
 
 });

@@ -6,20 +6,6 @@ export default Ember.Route.extend({
 
     let charp = this.store.findAll('character');
 
-    var prom = new Ember.RSVP.Promise((resolve,reject) =>{
-       Ember.$.ajax('/character', {
-          success: function(response) {
-            resolve(alert("there are no chars"));
-            },
-          error: function(reason) {
-              reject({error: "No chars found!"});
-          }
-      });
-
-
-    });
-
-
 
 
 

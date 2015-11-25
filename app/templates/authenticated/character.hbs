@@ -2,7 +2,7 @@
 <div>
       {{#each characters as |character|}}
           <div>
-          {{#link-to 'play' character }}
+          {{#link-to 'authenticated.play' character }}
           <button class="btn">
             {{ character.name }} {{character.level}}
           </button>
