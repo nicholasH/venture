@@ -48,7 +48,7 @@ export default Ember.Controller.extend({
 
 
       char.setProperties({x: char.get('x')+x, y: char.get('y')+y});
-         alert(char.get('id'));
+
       char.save().then( () => {
         return this.store.query('world-view', { character_id: char.get('id')}).then((worldViews) => {
           this.get('map').addToWorldView(worldViews.get('firstObject'));

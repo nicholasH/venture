@@ -12,10 +12,10 @@ module('Acceptance | characters', {
   }
 });
 
-test('visiting /characters', function(assert) {
-  visit('/characters');
+test('visiting /character', function(assert) {
+  visit('/authenticated/character');
 
   andThen(function() {
-    assert.equal(currentURL(), '/characters');
+    assert.equal(currentURL(), '/authenticated/character');
   });
 });

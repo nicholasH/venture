@@ -56,7 +56,7 @@ export default DS.Model.extend({
   }),
 
 
-  world_veiw: DS.belongsTo('world_view',{async: true}),
+
 
 
 
